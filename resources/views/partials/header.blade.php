@@ -11,19 +11,27 @@
   <li role="presentation"><a href="#">Collaborators</a></li>
   <li role="presentation"><a href="aboutUs">About Us</a></li>
   <li role="presentation"><a href="contactUs">Contact Us</a></li>
-
 <ul class="nav nav-pills navbar-right">
- <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Admin</a></li>
-          <li><a href="#">User</a></li> 
-        </ul>
-      </li>
- <li role="presentation"><a href="createAccount">Create Account</a></li>
- </ul>
-
+@if(Auth::check())
+    <li class="dropdown">
+              <a href="#" style=";padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i></i>welcome,{{Auth::user()->name}}
+          <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{{url('edituser')}}">Edit</a></li>
+                <li><a href="{{route('logout')}}">Logout</a></li>
+              </ul>
+    </li>  
+    @else
+      <li class="dropdown">
+                    <a href="#" style=";padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i></i>Login
+                <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{route('login')}}">Admin</a></li>
+                      <li><a href="{{route('login')}}">User</a></li>
+                    </ul>
+          </li>
+          <li role="presentation"><a href="createAccount"  style=";padding:15px;" >Create Account</a></li>
+        @endif 
 </ul>
 </div>
 </div>
