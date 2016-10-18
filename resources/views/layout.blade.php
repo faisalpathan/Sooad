@@ -32,6 +32,7 @@
 			} );
 			
             </script>
+            
      @yield('script')<!-- This to include your script-->	
 
 </body>
