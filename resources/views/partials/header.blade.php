@@ -13,7 +13,14 @@
   <li role="presentation"><a href="contactUs">Contact Us</a></li>
 
 <ul class="nav nav-pills navbar-right">
- <li role="presentation"><a href="signin">Sign in</a></li>
+ <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Admin</a></li>
+          <li><a href="#">User</a></li> 
+        </ul>
+      </li>
  <li role="presentation"><a href="createAccount">Create Account</a></li>
  </ul>
 

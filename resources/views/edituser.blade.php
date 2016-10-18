@@ -3,9 +3,9 @@
 @section('content')
 @extends('partials.header')
 
-<div class="col-md-8 col-md-offset-2 dash" style="margin-top: 1%">
-<div class="col-md-4 col-md-offset-4" style="margin-top: 1%">
-<h1>Create Account</h1>
+<div class="col-md-8 col-md-offset-2 dash" style="margin-top: 2%">
+<div class="col-md-4 col-md-offset-4" style="margin-top: 3%">
+<h1>Edit User</h1>
 <form method="post" action="">
 <div class="form-group">
     <label for="name">Name</label>
@@ -28,9 +28,9 @@
     <input type="password" class="form-control" id="pwd">
   </div>
   
-  <button type="submit" class="btn btn-default">Create Account</button>
-   <button type="reset" class="btn btn-default">Cancel</button>
-
+  <button type="submit" class="btn btn-default">Save</button>
+  <button type="reset" class="btn btn-default">Cancel</button>
+  
 </form>
 </div>
 </div>
