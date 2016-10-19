@@ -23,6 +23,20 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+
+
+     public function redirectPath()
+        {
+            // Logic that determines where to send the user
+            if (\Auth::user()->type == 'admin') 
+            {
+                return '/admin';
+            }
+
+            return '/home';
+        }
+
+
     /**
      * Where to redirect users after login / registration.
      *
@@ -34,24 +48,10 @@ class AuthController extends Controller
      *
      * @return void
      */
-
-     public function redirectPath()
+        public function __construct()
         {
-            // Logic that determines where to send the user
-            if (\Auth::user()->type == 'admin') 
-            {
-                return '/Admin';
-            }
-
-            return '/home';
+            $this->middleware($this->guestMiddleware(), ['except' => 'getLogout']);
         }
-
-
-    public function __construct()
-    {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-    }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -62,8 +62,10 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|max:255',
+            'dob' => 'required|max:255',
+            'contact' => 'required|max:255',            
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6'
         ]);
     }
 
@@ -77,8 +79,10 @@ class AuthController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'dob' => $data['dob'],
+            'contact'=>$data['contact'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => bcrypt($data['password'])
         ]);
     }
 }

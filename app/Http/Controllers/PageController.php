@@ -12,11 +12,17 @@ class PageController extends Controller
    {
      $this->middleware('auth', ['except' => ['home', 'createAccount','aboutUs','contactUs','form']]);
    }
-
+  
     public function home()
     {
     	return view('home');
     }
+
+   public function admin()
+    {
+        return view('adminpage');
+    }
+
      public function signin()
     {
     	return view('signin');
@@ -41,5 +47,4 @@ class PageController extends Controller
     {
         return view('aadharform');
     }
-
 }
