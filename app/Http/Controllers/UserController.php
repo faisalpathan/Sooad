@@ -75,20 +75,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $this->validate($request,array(
+        /*$this->validate($request,array(
             'name' => 'required|max:255',
             'dob' => 'required|max:255',
             'contact' => 'required|min:10',
              'email' => 'required|email|max:255',
             'address' => 'required|max:255',
-            ));
+            ));*/
 
         $user = User::find($id);
         $user->update($request->all());
         $user->save();
         
-        return redirect('Edit');
+        return redirect('/edituser');
     }
 
     /**

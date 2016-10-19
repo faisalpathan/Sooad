@@ -10,7 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-<<<<<<< HEAD
+
 
 Route::get('/', function () 
 {
@@ -18,9 +18,9 @@ Route::get('/', function ()
 });
 
 
-=======
+
 Route::get('/','PageController@home');
->>>>>>> ca0b83c60a8352286ee04980010d200fffc06143
+
 Route::get('/home','PageController@home');
 Route::get('/form','PageController@form');
 Route::get('/aboutUs','PageController@aboutUs');
