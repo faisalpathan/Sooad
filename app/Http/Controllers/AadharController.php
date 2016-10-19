@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use App\Http\Requests;
+
+use App\Aadhar;
+
+use Illuminate\Support\Facades\Input;
 
 class AadharController extends Controller
 {
@@ -13,9 +17,14 @@ class AadharController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+   {
+     $this->middleware('auth',['except' => ['getLogout']]);
+   }
+
     public function index()
     {
-        //
+        return view ('aadharform');
     }
 
     /**
@@ -25,7 +34,7 @@ class AadharController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,7 +45,11 @@ class AadharController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attr=Aadhar::create(Request::all());
+
+        $user_id = Input::get('user_id');
+
+        return redirect("aadharform")->with(array('user_id' => $user_id));
     }
 
     /**

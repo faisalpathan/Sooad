@@ -43,8 +43,8 @@ class PageController extends Controller
     {
     	return view('contactUs');
     }
-    public function aadharform()
-    {
-        return view('aadharform');
-    }
+    // public function aadharform()
+    // {
+    //     return view('aadharform');
+    // }
 }

@@ -42,7 +42,8 @@ Route::group(['middleware' => ['web']], function ()
   Route::post('/createAccount','Auth\AuthController@postRegister');//Saving to database
 
 
-  Route::get('/aadharform','PageController@aadharform');
+  Route::get('/aadharform','AadharController@index');
+  Route::post('/store','AadharController@store');
 
   //New Routes For updating info of user
   Route::get('/edituser', 'UserController@create');

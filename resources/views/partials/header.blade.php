@@ -13,6 +13,7 @@
   <li role="presentation"><a href="contactUs">Contact Us</a></li>
 <ul class="nav nav-pills navbar-right">
 @if(Auth::check())
+
     <li class="dropdown">
               <a href="#" style=";padding:15px;" class=" hvr-bounce-to-bottom dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i></i>welcome,{{Auth::user()->name}}
           <span class="caret"></span></a>

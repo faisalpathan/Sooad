@@ -24,6 +24,7 @@ class CreateAadharformsTable extends Migration
             $table->string('email');
             $table->string('DOB');
             $table->string('image');
+            $table->timestamps();
         });
 }
     /**

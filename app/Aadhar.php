@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aadhar extends Model
 {
+    public $timestamps = false;
     protected $primaryKey='aadhar_id';
 
-    protected $fillable = ['fullname','fname','mname','address','gender','mobile','email','DOB'];
+    protected $fillable = ['fullname','fname','mname','address','gender','mobile','email','DOB','user_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -16,7 +17,7 @@ class Aadhar extends Model
      * @var array
      */ 
     protected $hidden = [
-        'password', 'remember_token','user_id'
+        'password', 'remember_token'
     ];
 
 }

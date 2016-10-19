@@ -6,7 +6,12 @@
 
 <div class="col-md-8 col-md-offset-2">
 <h1> Aadhar Card Registration Form </h1><br/>
-<form>
+
+<form method="POST" action="store">
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+<input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 <div class="col-md-4 ">
   <div class="form-group">
     <label for="fullName">Full Name</label>
@@ -23,14 +28,13 @@
   <div class="form-group">
   	<label>Address</label>
   	<input type="text" class="form-control" id="address" name="address" name="address">
-  </div>
-  <div class="form-check">
-  <label>Gender: </label><br>
-  <label class="form-check-label">
-    <input class="form-check-input" type="checkbox" value="" name="gender">Male</label>
-  <label class="form-check-label">
-    <input class="form-check-input" type="checkbox" value="" name="gender">Female</label>
-  </div>
+  </div><br/>
+  <div class="form-group"><label>Gender</label>
+                <label class="radio-inline col-md-push-1" for="radios-0">
+                  <input name="gender" id="radios-0" value="male" checked="checked" style="font-size:15px;" type="radio">Male</label>
+                <label class="radio-inline col-md-push-1" for="radios-1">
+                  <input name="gender" id="radios-1" value="female" style="font-size:15px;" type="radio">Female</label>
+              </div>
   </div>
   <div class="col-md-4 col-md-offset-2" >
   	<div class="form-group">
@@ -62,6 +66,9 @@
                 
 
             </div>
+            <br/>
+            <input type="submit" class="btn btn-success" style="margin-left:-70%;" value="Submit">
+            <input type="reset" class="btn btn-success" value="Reset">
   </form>
   
   </div>
