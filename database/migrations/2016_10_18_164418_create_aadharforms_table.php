@@ -14,7 +14,7 @@ class CreateAadharformsTable extends Migration
     {
        Schema::create('aadhars', function (Blueprint $table) {
             $table->increments('aadhar_id');
-            $table->string('fullname');
+            $table->string('fullname')->unique();
             $table->string('fname');
             $table->string('mname');
             $table->string('address');
@@ -23,7 +23,7 @@ class CreateAadharformsTable extends Migration
             $table->Integer('user_id');
             $table->string('email');
             $table->string('DOB');
-            $table->string('image');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
 }

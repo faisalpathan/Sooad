@@ -49,7 +49,7 @@ class AadharController extends Controller
 
         $user_id = Input::get('user_id');
 
-        return redirect("aadharform")->with(array('user_id' => $user_id));
+        return redirect("form")->with(array('user_id' => $user_id));
     }
 
     /**

@@ -50,25 +50,11 @@
     <label>Date Of Birth</label>
     <input type="date"  class="form-control" id="date"  name="DOB" >
   </div>
-  <div >
-                <div>
-                    <h3>Upload Image</h3>
-                    
-                </div>
-                <div >
-                    <label >
-                        <span>Browse</span>
-                        <!-- The file is stored here. -->
-                        <input type="file" name="image" class="imageupload">
-                    </label>
-                    <button type="button" class="btn btn-default">Remove</button>
-                </div>
-                
-
-            </div>
             <br/>
-            <input type="submit" class="btn btn-success" style="margin-left:-70%;" value="Submit">
+            <div style="margin-left:-10%;margin-top:30%;">
+            <input type="submit" class="btn btn-success"  value="Submit">
             <input type="reset" class="btn btn-success" value="Reset">
+            </div>
   </form>
   
   </div>

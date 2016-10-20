@@ -21,11 +21,14 @@ Route::get('/', function ()
 
 Route::get('/','PageController@home');
 
+
 Route::get('/home','PageController@home');
 Route::get('/form','PageController@form');
+Route::get('/formIndus','PageController@formIndus');
 Route::get('/aboutUs','PageController@aboutUs');
 Route::get('/contactUs','PageController@contactUs');
-
+Route::get('/dashboard','PageController@dashboard');
+  Route::get('/formAdmin','PageController@formAdmin');
 Route::group(['middleware' => ['web']], function () 
 {	
   //Login Route	
@@ -34,7 +37,8 @@ Route::group(['middleware' => ['web']], function ()
   Route::get('/logout',['as'=>'logout','uses'=>'Auth\AuthController@getLogout']);  
   //Admin route
   Route::get('/admin','PageController@admin');
-
+  Route::get('/history','HistoryController@index');
+  
 
 
   //Registration Route

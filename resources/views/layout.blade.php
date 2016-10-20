@@ -11,6 +11,7 @@
 		    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
 	<title>Form+</title>
 	 <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre" rel="stylesheet">
+	 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
 </head>
@@ -30,8 +31,11 @@
 					"info":     true
 				} );
 			} );
-			
+			$(document).ready(function() {
+    $('#example').DataTable();
+} );
             </script>
+
             
      @yield('script')<!-- This to include your script-->	
 

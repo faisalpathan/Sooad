@@ -2,8 +2,9 @@
 
 @section('content')
 @extends('partials.header')
-<h1>User Sign in</h1>
+
 <div class="col-md-8 col-md-offset-2 dash" style="margin-top: 2%">
+<h1>User Sign in</h1>
 <div class="col-md-4 col-md-offset-4" style="margin-top: 3%">
 
   <form method="post" action="{{ url('/signin') }}">
